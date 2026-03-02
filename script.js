@@ -47,10 +47,11 @@ function createGrid(gridContainer, square, gridMin) {
 }
 
 function changeGridSize(gridContainer, square, gridMin) {
-  let gridSizePrompt = prompt(
-    "Give us a new grid size (between 16-100):",
-    "16",
-  );
+  let gridSizePrompt = prompt("Give us a new grid size (between 16-100):");
+
+  if (gridSizePrompt === null) {
+    return;
+  }
 
   // Check if we got a correct input
   const properSize = isStringInteger(gridSizePrompt);
